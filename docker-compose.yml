@@ -48,9 +48,24 @@ services:
     networks:
       - cafe-net
 
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=pgadmin@cafereview.app
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - cafe-net
+    depends_on:
+      - db
+
 networks:
   cafe-net:
     driver: bridge
 
 volumes:
   postgres_data:
+  pgadmin_data:
