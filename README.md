@@ -128,6 +128,7 @@ Services:
 | Frontend | http://localhost:5174 |
 | Backend API | http://localhost:8000 |
 | API Docs | http://localhost:8000/docs |
+| pgAdmin (DB) | http://localhost:5050 |
 
 ## Environment Variables
 
