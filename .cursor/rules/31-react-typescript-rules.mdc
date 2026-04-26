@@ -1,0 +1,16 @@
+---
+description: React and TypeScript rules for a Vite frontend
+globs:
+  - "frontend/src/**/*.ts"
+  - "frontend/src/**/*.tsx"
+  - "frontend/src/**/*.js"
+  - "frontend/src/**/*.jsx"
+alwaysApply: false
+---
+- Prefer TypeScript for new frontend code.
+- Use functional React components.
+- Keep components focused and reusable.
+- Keep API calls in `api/` or dedicated hooks.
+- Use clear prop and API data types.
+- Handle loading, empty, and error states explicitly.
+- Do not generate Next.js-specific patterns.

@@ -1,0 +1,13 @@
+---
+description: FastAPI folder structure
+globs:
+  - "backend/app/**/*.*"
+alwaysApply: false
+---
+- `backend/app/main.py`: app entrypoint and wiring.
+- `backend/app/routers/`: API routes.
+- `backend/app/schemas/`: Pydantic request/response schemas.
+- `backend/app/models/`: database models.
+- `backend/app/services/`: business logic.
+- `backend/app/dependencies/`: shared dependencies.
+- Keep routers thin and move business logic into services.

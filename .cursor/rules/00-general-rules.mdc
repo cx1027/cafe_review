@@ -1,0 +1,11 @@
+---
+description: Global step-by-step generation rules
+globs:
+  - "**/*"
+alwaysApply: false
+---
+- Only complete the current step.
+- Output full contents only for files created or modified in the current step.
+- Do not repeat unchanged files.
+- Do not implement future steps early.
+- Before coding, briefly list files to create, modify, and leave unchanged.

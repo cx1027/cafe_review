@@ -1,0 +1,15 @@
+---
+description: React frontend folder structure
+globs:
+  - "frontend/src/**/*.{ts,tsx,js,jsx}"
+alwaysApply: false
+---
+- `frontend/src/api`: API calls.
+- `frontend/src/components`: reusable UI components.
+- `frontend/src/hooks`: shared React hooks.
+- `frontend/src/lib`: utilities and helpers.
+- `frontend/src/pages`: page-level views.
+- `frontend/src/stores`: shared state.
+- `frontend/src/types`: shared types.
+- `frontend/src/main.tsx`: app entry.
+- `frontend/src/App.tsx`: root component.

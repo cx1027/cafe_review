@@ -1,0 +1,13 @@
+---
+description: Shared coding standards for frontend and backend
+globs:
+  - "backend/**/*.py"
+  - "frontend/src/**/*.ts"
+  - "frontend/src/**/*.tsx"
+alwaysApply: false
+---
+- Use clear names and cohesive files.
+- Prefer composition over duplication.
+- Remove unused code and imports.
+- Follow project formatter and linter settings.
+- Keep data models, business logic, and transport layers separate.

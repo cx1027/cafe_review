@@ -1,0 +1,14 @@
+---
+description: Database and persistence rules for PostgreSQL-backed apps
+globs:
+  - "backend/app/models/**/*.py"
+  - "backend/app/services/**/*.py"
+  - "backend/alembic/**/*.py"
+  - "backend/**/migrations/**/*.py"
+alwaysApply: false
+---
+- Keep database models separate from API schemas.
+- Do not hardcode database credentials or connection strings.
+- Prefer migrations for schema changes.
+- Consider existing data when changing columns, defaults, or constraints.
+- Add indexes and constraints deliberately, not implicitly.

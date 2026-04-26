@@ -1,0 +1,11 @@
+---
+description: FastAPI application rules
+globs:
+  - "backend/app/**/*.py"
+alwaysApply: false
+---
+- Use Pydantic schemas for request and response validation.
+- Use dependency injection for shared resources.
+- Use async/await for I/O-bound work when appropriate.
+- Raise `HTTPException` for expected API errors.
+- Keep response shapes consistent.

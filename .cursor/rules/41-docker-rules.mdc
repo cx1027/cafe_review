@@ -1,0 +1,14 @@
+---
+description: Docker and Docker Compose rules for local development
+globs:
+  - "**/Dockerfile"
+  - "**/docker-compose*.yml"
+  - "**/.dockerignore"
+alwaysApply: false
+---
+- Keep services modular: frontend, backend, and db.
+- Use service names for container-to-container communication, not localhost.
+- Use named volumes for database persistence.
+- Read configuration from environment variables.
+- Keep Dockerfiles and Compose files simple and readable.
+- Do not hardcode secrets in Docker or Compose files.

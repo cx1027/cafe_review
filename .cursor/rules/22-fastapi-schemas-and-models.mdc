@@ -1,0 +1,11 @@
+---
+description: Rules for FastAPI schemas and models
+globs:
+  - "backend/app/schemas/**/*.py"
+  - "backend/app/models/**/*.py"
+alwaysApply: false
+---
+- Use `schemas/` for Pydantic request and response contracts.
+- Use `models/` for database or persistence models.
+- Do not mix transport schemas and persistence models in the same file.
+- Prefer explicit field types and clear naming.

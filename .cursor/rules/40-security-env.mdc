@@ -1,0 +1,15 @@
+---
+description: Security and environment rules
+globs:
+  - "backend/**/*.py"
+  - "frontend/src/**/*.ts"
+  - "frontend/src/**/*.tsx"
+  - "docker-compose*.yml"
+  - ".env*"
+alwaysApply: false
+---
+- Never hardcode secrets, API keys, or tokens.
+- Read configuration from environment variables.
+- Avoid exposing sensitive backend details to the frontend.
+- Sanitize logs and error messages.
+- Treat user-generated and model-generated content as untrusted input.

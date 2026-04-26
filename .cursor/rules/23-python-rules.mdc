@@ -1,0 +1,11 @@
+---
+description: General Python coding rules
+globs:
+  - "backend/**/*.py"
+alwaysApply: false
+---
+- Use type hints.
+- Follow PEP 8 and project formatter settings.
+- Prefer small, cohesive functions.
+- Use early returns when they improve clarity.
+- Do not mix unrelated responsibilities in one module.
