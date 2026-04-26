@@ -1,2 +1,56 @@
-# Placeholder for Step 5 — Docker Compose configuration
-# This file will be completed in Step 5 with proper services, volumes, and environment variables.
+version: '3.9'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_BASE_URL=http://localhost:8000
+    ports:
+      - "5174:5173"
+    depends_on:
+      - backend
+    networks:
+      - cafe-net
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/cafe_review
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - cafe-net
+    volumes:
+      - ./backend/app:/app/app
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=cafe_review
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d cafe_review"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - cafe-net
+
+networks:
+  cafe-net:
+    driver: bridge
+
+volumes:
+  postgres_data:
